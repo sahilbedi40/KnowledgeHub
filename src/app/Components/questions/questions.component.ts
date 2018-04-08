@@ -16,6 +16,13 @@ export class QuestionsComponent implements OnInit {
   questionList:any=[];
   cattype:string="";
   isHidden:boolean=true;
+  selectedItemObject:any={
+      title:"",
+      divContent:"",
+      divId:0
+  };
+
+  selectedCatType:string="";
   //@ViewChild(AddQuestionPopupComponent) private Mypopup:AddQuestionPopupComponent;
   constructor(private _service:ManageQuestionService,private activatedRoute: ActivatedRoute,private route:Router) { }
 
@@ -68,8 +75,17 @@ export class QuestionsComponent implements OnInit {
 
   UpdateAnswer(obj:any){
     this.isHidden=false;
+    console.log(obj);
+    this.selectedItemObject=Object.assign({}, obj);
+    this.selectedCatType= this.cattype;
     $('#MyModal').modal({ backdrop: 'static' });
     //this.route.navigate(['./addquestion'])
+  }
+
+  UpdateAnswerToDB(){
+    console.log(this.selectedItemObject);
+    console.log(this.cattype);
+    $('#MyModal').modal('hide');
   }
 
 }
