@@ -1,0 +1,64 @@
+<div class="container MarginTop80 MarginBottom30">
+    <div  class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-6"><h4 class="my-4">Add Question ?</h4></div>        
+    </div>
+
+  <div class="row">
+    <div class="col-md-2"></div>
+
+    <div class="col-md-8">
+        <form>
+            <div class="form-group">
+              <label>Title</label>
+              <input type="text" class="form-control" name="Answerobj.title" [(ngModel)]="Answerobj.title" placeholder="what is class ?">
+            </div>
+            <div class="form-group">
+              <label>Category</label>
+              <select class="form-control" name="selectedType" (change)="GetMaxRecordCountForSelectedType()" [(ngModel)]="selectedType">
+                  <option value=""></option>
+                <option value="CSharp">C#.Net</option>
+                <option value="MVC">ASP.Net MVC</option>
+                <option value="WebApi">Web API</option>
+                <option value="ASP">ASP.Net</option>
+                <option value="WCF">WCF</option>
+                <option value="MSSql">Sql Server</option>
+              </select>
+            </div>            
+            <div class="form-group">
+              <label>Answer</label>
+              <textarea class="form-control" placeholder="Optional" name="Answerobj.divContent" [(ngModel)]="Answerobj.divContent" rows="3"></textarea>
+            </div>
+            <button  class="btn btn-success float-right" (click)="SaveQuestion()">Save</button>
+          </form>
+    </div>
+  <div class="col-md-2"></div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- <div class="modal" id="questionModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> -->

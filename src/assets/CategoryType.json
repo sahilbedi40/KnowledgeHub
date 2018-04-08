@@ -1,0 +1,35 @@
+{
+    "CategoryType":[
+    {
+        "title":"C#.Net",
+        "imgSrc":"../assets/images/CSharp.jpg",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!"
+    },
+    {
+        "title":"ASP.Net MVC",
+        "imgSrc":"../assets/images/aspnetmvc.jpg",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!"
+    },
+    {
+        "title":"Web API",
+        "imgSrc":"../assets/images/WebApi.jpg",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!"
+    },
+    {
+        "title":"ASP.Net",
+        "imgSrc":"../assets/images/AspDotNet.jpg",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!"
+    },
+    {
+        "title":"WCF",
+        "imgSrc":"../assets/images/wcf.jpg",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!"
+    },
+    {
+        "title":"Sql Server",
+        "imgSrc":"../assets/images/sqlserver.jpg",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!"
+    }
+]
+
+}

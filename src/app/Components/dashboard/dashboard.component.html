@@ -1,0 +1,50 @@
+<!-- Page Content -->
+<div class="container MarginTop80">
+  
+        <!-- Page Heading -->
+        <h1 class="my-4">Share Knowledge
+          <small>Share Hapiness</small>
+        </h1>
+  
+        <div class="row">
+          <div class="col-lg-4 col-sm-6 portfolio-item" *ngFor="let item of CategoryTypeList">
+            <div class="card h-100">
+              <a [routerLink]='["/questions"]' [queryParams]="{type: item.routeValue}"><img class="card-img-top" src="{{item.imgSrc}}" title="{{item.title}}" alt="{{item.title}}"></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">{{item.title}}</a>
+                </h4>
+                <p class="card-text">{{item.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.row -->
+  
+        <!-- Pagination -->
+        <ul class="pagination justify-content-center">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">1</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">2</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">3</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+        </ul>
+  
+</div>
+      <!-- /.container -->

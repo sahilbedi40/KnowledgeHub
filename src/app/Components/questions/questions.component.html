@@ -1,0 +1,48 @@
+
+<div class="container MarginTop80 MarginBottom30">
+    <div  class="row">
+        <div class="col-md-6"><h4 class="my-4">{{title + ' Interview Questions'}}</h4></div>
+        <div class="col-md-6"><button  class="btn btn-success float-right" (click)="AddQuestion()">Add Question</button></div>
+    </div>
+  <div id="accordion">
+    <div class="card" *ngFor="let item of questionList">
+      <div class="card-header" [attr.id]="'heading'+item.divId">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" [attr.data-target]="'#collapse' +item.divId" aria-expanded="true" [attr.aria-controls]="'collapse'+item.divId">
+            {{item.title}}
+          </button>
+         <button class="btn btn-success float-right" (click)="UpdateAnswer(item)">Edit</button>
+        </h5>
+      </div>
+
+      <div [attr.id]="'collapse'+item.divId" [ngClass]="(item.divId =='1')?'collapse show':'collapse'"  [attr.aria-labelledby]="'heading'+item.divId" data-parent="#accordion">
+        <div class="card-body">
+          {{item.divContent}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div [hidden]="isHidden"> -->
+    <div class="modal" id="MyModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button> -->
+            </div>
+            <div class="modal-body">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- </div> -->
