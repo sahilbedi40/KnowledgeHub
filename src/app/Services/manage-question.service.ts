@@ -19,4 +19,8 @@ export class ManageQuestionService {
     return this.db.list("/Question/"+type+"/Questions").push(obj);
   }
 
+  UpdateAnswerToDB(type:string,key:string,data:any){
+    return this.db.list("/Question/"+type+"/Questions").update(key,data);
+  }
+
 }
