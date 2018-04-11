@@ -1,0 +1,138 @@
+/* .sampleContainer {
+    margin-top: 250px;
+  }
+  
+  .loader {
+    position: relative;
+    width: 44px;
+    height: 8px;
+    margin: 12px auto;
+  }
+  
+  .dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background: #ccc;
+    position: absolute;
+  }
+  
+  .dot_1 {
+    animation: animateDot1 1.5s linear infinite;
+    left: 12px;
+    background: #e579b8;
+  }
+  
+  .dot_2 {
+    animation: animateDot2 1.5s linear infinite;
+    animation-delay: 0.5s;
+    left: 24px;
+  }
+  
+  .dot_3 {
+    animation: animateDot3 1.5s linear infinite;
+    left: 12px;
+  }
+  
+  .dot_4 {
+    animation: animateDot4 1.5s linear infinite;
+    animation-delay: 0.5s;
+    left: 24px;
+  }
+  
+  @keyframes animateDot1 {
+    0% {
+      transform: rotate(0deg) translateX(-12px);
+    }
+    25% {
+      transform: rotate(180deg) translateX(-12px);
+    }
+    75% {
+      transform: rotate(180deg) translateX(-12px);
+    }
+    100% {
+      transform: rotate(360deg) translateX(-12px);
+    }
+  }
+  @keyframes animateDot2 {
+    0% {
+      transform: rotate(0deg) translateX(-12px);
+    }
+    25% {
+      transform: rotate(-180deg) translateX(-12px);
+    }
+    75% {
+      transform: rotate(-180deg) translateX(-12px);
+    }
+    100% {
+      transform: rotate(-360deg) translateX(-12px);
+    }
+  }
+  @keyframes animateDot3 {
+    0% {
+      transform: rotate(0deg) translateX(12px);
+    }
+    25% {
+      transform: rotate(180deg) translateX(12px);
+    }
+    75% {
+      transform: rotate(180deg) translateX(12px);
+    }
+    100% {
+      transform: rotate(360deg) translateX(12px);
+    }
+  }
+  @keyframes animateDot4 {
+    0% {
+      transform: rotate(0deg) translateX(12px);
+    }
+    25% {
+      transform: rotate(-180deg) translateX(12px);
+    }
+    75% {
+      transform: rotate(-180deg) translateX(12px);
+    }
+    100% {
+      transform: rotate(-360deg) translateX(12px);
+    }
+  }
+   */
+
+
+   .loading {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+}
+.loading-wheel {
+    width: 20px;
+    height: 20px;
+    margin-top: -40px;
+    margin-left: -40px;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    border-width: 30px;
+    border-radius: 50%;
+    -webkit-animation: spin 1s linear infinite;
+}
+.style-2 .loading-wheel {
+    border-style: double;
+    border-color: #ccc transparent;
+}
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(-360deg);
+    }
+}

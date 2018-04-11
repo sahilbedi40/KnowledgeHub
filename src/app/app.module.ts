@@ -17,6 +17,8 @@ import { QuestionsComponent } from './Components/questions/questions.component';
 import {CategoryTypeService} from './Services/category-type.service';
 import {ManageQuestionService} from './Services/manage-question.service';
 import { AddQuestionPopupComponent } from './Components/add-question-popup/add-question-popup.component';
+import { LoaderComponent } from './Components/loader/loader.component';
+import {LoaderService} from './Services/loader.service';
 
 const appRoutes: Routes = [  
   { path: '',redirectTo: '/Dashboard',pathMatch: 'full'},
@@ -32,7 +34,8 @@ const appRoutes: Routes = [
     AppComponent,
     DashboardComponent,
     AddQuestionPopupComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,7 @@ const appRoutes: Routes = [
     AngularFireDatabaseModule,
     FormsModule
   ],
-  providers: [CategoryTypeService,ManageQuestionService],
+  providers: [CategoryTypeService,ManageQuestionService,LoaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

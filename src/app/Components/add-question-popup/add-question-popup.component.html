@@ -4,19 +4,30 @@
         <div class="col-md-6"><h4 class="my-4">Add Question ?</h4></div>        
     </div>
 
+
   <div class="row">
     <div class="col-md-2"></div>
 
     <div class="col-md-8">
-        <form>
+
+        <div *ngIf="!isHidden"  [ngClass]="isSuccess? 'alert alert-success text-center': 'alert alert-danger text-center'">
+            {{messageText}}
+          </div>
+
+        <form #MyForm="ngForm">
             <div class="form-group">
               <label>Title</label>
-              <input type="text" class="form-control" name="Answerobj.title" [(ngModel)]="Answerobj.title" placeholder="what is class ?">
+              <input type="text" id="title" class="form-control" name="title" [(ngModel)]="Answerobj.title" #title="ngModel" required  placeholder="what is class ?">
+
+              <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
+                  Title is required.
+              </div> 
+
             </div>
             <div class="form-group">
               <label>Category</label>
-              <select class="form-control" name="selectedType" (change)="GetMaxRecordCountForSelectedType()" [(ngModel)]="selectedType">
-                  <option value=""></option>
+              <select class="form-control" id="selectedType" name="selectedType" (change)="GetMaxRecordCountForSelectedType()" required [(ngModel)]="selectedType" #catType="ngModel">
+                  <option [ngValue]="null">Select Category</option>
                 <option value="CSharp">C#.Net</option>
                 <option value="MVC">ASP.Net MVC</option>
                 <option value="WebApi">Web API</option>
@@ -24,12 +35,17 @@
                 <option value="WCF">WCF</option>
                 <option value="MSSql">Sql Server</option>
               </select>
+
+              <div *ngIf="catType.invalid &&  catType.touched" class="alert alert-danger">
+                  Category is required.
+              </div> 
+
             </div>            
             <div class="form-group">
               <label>Answer</label>
               <textarea class="form-control" placeholder="Optional" name="Answerobj.divContent" [(ngModel)]="Answerobj.divContent" rows="3"></textarea>
             </div>
-            <button  class="btn btn-success float-right" (click)="SaveQuestion()">Save</button>
+            <button [disabled]="MyForm.invalid"  class="btn btn-success float-right" (click)="SaveQuestion()">Save</button>
           </form>
     </div>
   <div class="col-md-2"></div>

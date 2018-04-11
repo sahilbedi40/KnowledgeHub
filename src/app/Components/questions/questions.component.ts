@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import {ManageQuestionService} from '../../Services/manage-question.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import {LoaderService} from '../../Services/loader.service';
 //import {AddQuestionPopupComponent} from '../add-question-popup/add-question-popup.component';
 //import { FirebaseListObservable } from 'angularfire2/database';
 declare var $;
@@ -25,7 +26,7 @@ export class QuestionsComponent implements OnInit {
 
   selectedCatType:string="";
   //@ViewChild(AddQuestionPopupComponent) private Mypopup:AddQuestionPopupComponent;
-  constructor(private _service:ManageQuestionService,private activatedRoute: ActivatedRoute,private route:Router) { }
+  constructor(private _service:ManageQuestionService,private activatedRoute: ActivatedRoute,private route:Router,private _loaderService:LoaderService) { }
 
   ngOnInit() {
    // console.log(this.activatedRoute.snapshot.queryParams["type"]);
@@ -41,6 +42,7 @@ export class QuestionsComponent implements OnInit {
 }
 
   GetQuestionsByCategoryType(type:string){
+    this._loaderService.showLoader();
     let result:any=[];
     this._service.GetQuestionsByCategoryType(type).subscribe(
       (data) =>{
@@ -65,10 +67,11 @@ export class QuestionsComponent implements OnInit {
         this.questionList =[];
        this.title = data[1].toString();
        this.questionList = result;
-      
+      this._loaderService.hideLoader();
       },
       (error) =>{
         console.log(error);
+        this._loaderService.hideLoader();
       }
     )
   }
@@ -90,6 +93,7 @@ export class QuestionsComponent implements OnInit {
   }
 
   UpdateAnswerToDB(){
+    this._loaderService.showLoader();
     console.log(this.selectedItemObject);
     console.log(this.cattype);
     this._service.UpdateAnswerToDB(this.cattype,this.selectedItemObject.key,
@@ -99,9 +103,11 @@ export class QuestionsComponent implements OnInit {
            // console.log(resolve);
             $('#MyModal').modal('hide');
             this.ClearEditFormControlValue();
+            this._loaderService.hideLoader();
           },
           (reject) =>{
             console.log(reject);
+            this._loaderService.hideLoader();
           }
         )
  
