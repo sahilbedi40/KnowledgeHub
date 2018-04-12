@@ -36,7 +36,7 @@
                 <option value="MSSql">Sql Server</option>
               </select>
 
-              <div *ngIf="catType.invalid &&  catType.touched" class="alert alert-danger">
+              <div *ngIf="catType.invalid &&  (catType.dirty || catType.touched)" class="alert alert-danger">
                   Category is required.
               </div> 
 
@@ -45,7 +45,7 @@
               <label>Answer</label>
               <textarea class="form-control" placeholder="Optional" name="Answerobj.divContent" [(ngModel)]="Answerobj.divContent" rows="3"></textarea>
             </div>
-            <button [disabled]="MyForm.invalid"  class="btn btn-success float-right" (click)="SaveQuestion()">Save</button>
+            <button [disabled]="MyForm.invalid"  class="btn btn-success float-right" (click)="SaveQuestion(MyForm)">Save</button>
           </form>
     </div>
   <div class="col-md-2"></div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ManageQuestionService} from '../../Services/manage-question.service';
 import {LoaderService} from '../../Services/loader.service';
+import { NgForm } from '@angular/forms';
 
 declare var $;
 @Component({
@@ -25,7 +26,7 @@ messageText:string="";
   ngOnInit() {
   }
 
-  SaveQuestion(){
+  SaveQuestion(form:NgForm){
     console.log(this.Answerobj)
     console.log(this.selectedType);
     if((this.selectedType !=null && this.selectedType !="") && this.Answerobj.title !="")
@@ -38,14 +39,15 @@ messageText:string="";
             this.messageText = "Record added successfully";
             this.isSuccess = true;
             this.isHidden =false;
-            this.ClearEditFormControlValue();
+            //this.ClearEditFormControlValue();
+            form.resetForm();
             this.loaderService.hideLoader();
           },
           (reject) =>{
             console.log(reject);
             this.messageText = "Facing problem to save record. Please try again later.";
             this.isHidden =false;
-            this.isSuccess = false;
+            this.isSuccess = false;            
             this.loaderService.hideLoader();
           }
         );

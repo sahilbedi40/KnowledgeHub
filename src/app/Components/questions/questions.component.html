@@ -36,15 +36,16 @@
               </button> -->
             </div>
             <div class="modal-body">
-                <form>
+                <form #MyForm="ngForm">
                     <div class="form-group">
                       <label>Title</label>
-                      <input type="text" class="form-control" name="selectedItemObject.title" [(ngModel)]="selectedItemObject.title" placeholder="what is class ?">
+                      <input type="text" class="form-control" required id="selectedtitle" name="selectedtitle" [(ngModel)]="selectedItemObject.title" #selectedtitle="ngModel" placeholder="what is class ?">
+                      <span style="color: red;margin-left: 2px;" *ngIf="selectedtitle.invalid && (selectedtitle.dirty || selectedtitle.touched)">Title is required</span>
                     </div>
                     <div class="form-group">
                       <label>Category</label>
-                      <select class="form-control" name="selectedCatType"  [(ngModel)]="selectedCatType" disabled="disabled">
-                          <option value=""></option>
+                      <select class="form-control" id="selectedType" name="selectedType"  [(ngModel)]="selectedCatType" required #selectedType="ngModel" disabled="disabled">
+                        <option [ngValue]="null">Select Category</option>
                         <option value="CSharp">C#.Net</option>
                         <option value="MVC">ASP.Net MVC</option>
                         <option value="WebApi">Web API</option>
@@ -52,15 +53,17 @@
                         <option value="WCF">WCF</option>
                         <option value="MSSql">Sql Server</option>
                       </select>
+                      <span style="color: red;margin-left: 2px;" *ngIf="selectedType.invalid && (selectedType.dirty || selectedType.touched)">Category is required</span>
                     </div>            
                     <div class="form-group">
                       <label>Answer</label>
-                      <textarea class="form-control" placeholder="Optional" name="selectedItemObject.divContent" [(ngModel)]="selectedItemObject.divContent" rows="3"></textarea>
+                      <textarea class="form-control" placeholder="Answer" id="divContent" required name="divContent" [(ngModel)]="selectedItemObject.divContent" #divContent="ngModel" rows="3"></textarea>
+                      <span style="color: red;margin-left: 2px;" *ngIf="divContent.invalid && (divContent.dirty || divContent.touched)">Answer is required</span>
                     </div>                    
                   </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-success" (click)="UpdateAnswerToDB()">Save changes</button>
+              <button type="button" [disabled]="MyForm.invalid" class="btn btn-success" (click)="UpdateAnswerToDB()">Save changes</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
           </div>

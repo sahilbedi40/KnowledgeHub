@@ -12,7 +12,7 @@
               <a [routerLink]='["/questions"]' [queryParams]="{type: item.routeValue}"><img class="card-img-top" src="{{item.imgSrc}}" title="{{item.title}}" alt="{{item.title}}"></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">{{item.title}}</a>
+                  <a [routerLink]='["/questions"]' [queryParams]="{type: item.routeValue}">{{item.title}}</a>
                 </h4>
                 <p class="card-text">{{item.description}}</p>
               </div>
@@ -22,7 +22,7 @@
         <!-- /.row -->
   
         <!-- Pagination -->
-        <ul class="pagination justify-content-center">
+        <!-- <ul class="pagination justify-content-center">
           <li class="page-item">
             <a class="page-link" href="#" aria-label="Previous">
               <span aria-hidden="true">&laquo;</span>
@@ -44,7 +44,7 @@
               <span class="sr-only">Next</span>
             </a>
           </li>
-        </ul>
+        </ul> -->
   
 </div>
       <!-- /.container -->
