@@ -20,12 +20,9 @@ export class DashboardComponent implements OnInit {
   GetCategoryType(){
     this._loaderService.showLoader();
     this._service.GetCategoryType().subscribe(
-      (data)=>{
-        console.log(data);
+      (data)=>{       
         this.CategoryTypeList = data;
-        this._loaderService.hideLoader();
-          //console.log(data);
-          //console.log(data["CategoryType"]);
+        this._loaderService.hideLoader();          
       },
       (error)=>{
         console.log(error);

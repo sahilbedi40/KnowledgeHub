@@ -8,10 +8,8 @@ export class ManageQuestionService {
 
   constructor(private db:AngularFireDatabase,private httpClient:HttpClient) { }
 
-  questionListUrl="assets/serverFormat.json";
   GetQuestionsByCategoryType(type:string){
     return this.db.list("/Question/"+type).valueChanges();
-  //return this.httpClient.get(this.questionListUrl);
   }
 
   SaveQuestionToDB(obj:any,type:string)

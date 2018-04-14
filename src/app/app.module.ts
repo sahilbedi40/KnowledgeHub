@@ -20,6 +20,7 @@ import { AddQuestionPopupComponent } from './Components/add-question-popup/add-q
 import { LoaderComponent } from './Components/loader/loader.component';
 import {LoaderService} from './Services/loader.service';
 import { AboutMeComponent } from './Components/about-me/about-me.component';
+import {UserAccessService} from './Services/user-access.service';
 
 const appRoutes: Routes = [  
   { path: '',redirectTo: '/Dashboard',pathMatch: 'full'},
@@ -48,7 +49,7 @@ const appRoutes: Routes = [
     AngularFireDatabaseModule,
     FormsModule
   ],
-  providers: [CategoryTypeService,ManageQuestionService,LoaderService],
+  providers: [CategoryTypeService,ManageQuestionService,LoaderService,UserAccessService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

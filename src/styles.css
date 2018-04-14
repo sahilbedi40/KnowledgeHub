@@ -8,3 +8,63 @@
 .MarginBottom30{
     margin-bottom: 30px;
 }
+
+.MarginBottom0{
+    margin-bottom: 0px;
+}
+
+.MarginTop33{
+    margin-top: -33px;    
+}
+
+.MarginTop33 h1{   
+    margin-left: 14px;
+}
+
+#AboutDivId{
+margin-top: 50px;
+}
+
+/* Portrait and Landscape */
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .MarginTop80{
+        margin-top: 44px;
+    }
+
+    .MarginBottom0{
+        margin-bottom: 12px;
+    }
+    .MarginBottom0 .col-md-6 h4{
+        font-size: 1.3rem;
+    }
+    .MarginBottom0 h1{
+        font-size: 1.5rem;
+        margin-left: 14px;
+    }
+
+    .MarginTop33{
+        margin-top: 0px;    
+    }
+    #AboutDivId{
+        margin-top: 34px;
+        }
+}
+
+/* Portrait */
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px)
+and (-webkit-min-device-pixel-ratio: 2)
+ {
+    /* .MarginTop80{
+        margin-top: 44px;
+    } */
+
+    .MarginBottom0 h1{     
+        margin-left: 14px;
+    }
+}
+

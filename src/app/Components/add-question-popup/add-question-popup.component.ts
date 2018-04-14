@@ -27,15 +27,12 @@ messageText:string="";
   }
 
   SaveQuestion(form:NgForm){
-    console.log(this.Answerobj)
-    console.log(this.selectedType);
     if((this.selectedType !=null && this.selectedType !="") && this.Answerobj.title !="")
       {
         this.loaderService.showLoader();
         this.Answerobj.divId =this.maxRecordsInType+1;
         this._service.SaveQuestionToDB(this.Answerobj,this.selectedType).then(
-          (resolve) =>{
-            console.log(resolve);
+          (resolve) =>{            
             this.messageText = "Record added successfully";
             this.isSuccess = true;
             this.isHidden =false;
@@ -43,11 +40,11 @@ messageText:string="";
             form.resetForm();
             this.loaderService.hideLoader();
           },
-          (reject) =>{
-            console.log(reject);
+          (reject) =>{           
             this.messageText = "Facing problem to save record. Please try again later.";
             this.isHidden =false;
-            this.isSuccess = false;            
+            this.isSuccess = false;     
+            console.log(reject);
             this.loaderService.hideLoader();
           }
         );
@@ -65,18 +62,26 @@ messageText:string="";
     if(this.selectedType != null && this.selectedType !="")
       {
         this._service.GetQuestionsByCategoryType(this.selectedType).subscribe(
-          (data) =>{        
-           if($.isArray(data[0]))
-             {
-               result = data[0];
-             }
-             else{
-                result = Object.keys(data[0]).map(function(key) {
-                 return data[0][key];
-               });
-             }
-   
-           this.maxRecordsInType = result.length;
+          (data) =>{    
+            
+            if(data.length == 2)
+              {
+                if($.isArray(data[0]))
+                  {
+                    result = data[0];
+                  }
+                  else{
+                     result = Object.keys(data[0]).map(function(key) {
+                      return data[0][key];
+                    });
+                  }
+        
+                this.maxRecordsInType = result.length;
+              }
+              else{
+                this.maxRecordsInType = 0;
+              }
+
           },
           (error) =>{
             console.log(error);

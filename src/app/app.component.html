@@ -12,6 +12,26 @@
             <span class="sr-only">(current)</span>
           </a>
         </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Quick Access
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" [routerLink]='["/addquestion"]'>Add Question</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item"[routerLink]='["/questions"]' [queryParams]="{type: 'CSharp'}">C#.Net</a>
+                <div class="dropdown-divider"></div> 
+                <a class="dropdown-item"[routerLink]='["/questions"]' [queryParams]="{type: 'MVC'}">ASP.Net MVC</a>
+                <div class="dropdown-divider"></div>            
+                <a class="dropdown-item"[routerLink]='["/questions"]' [queryParams]="{type: 'WebApi'}">Web API</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item"[routerLink]='["/questions"]' [queryParams]="{type: 'ASP'}">ASP.Net</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item"[routerLink]='["/questions"]' [queryParams]="{type: 'WCF'}">WCF</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item"[routerLink]='["/questions"]' [queryParams]="{type: 'MSSql'}">Sql Server</a>                              
+              </div>
+        </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]='["/aboutus"]'>About Me</a>
         </li>
@@ -32,7 +52,7 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+        <p class="m-0 text-center text-white">Copyright &copy; KnowledgeHub 2018</p>
       </div>
       <!-- /.container -->
     </footer>
