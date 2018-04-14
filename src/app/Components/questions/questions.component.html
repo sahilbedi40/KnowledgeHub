@@ -25,8 +25,8 @@
       </div>
 
       <div [attr.id]="'collapse'+item.divId" [ngClass]="(item.divId =='1')?'collapse show':'collapse'"  [attr.aria-labelledby]="'heading'+item.divId" data-parent="#accordion">
-        <div class="card-body">
-          {{item.divContent}}
+        <div class="card-body">  
+          <div  [innerHtml]="item.divContent"></div>        
           <span *ngIf="item.divContent == ''">Answer is not published yet.</span>
         </div>
       </div>
