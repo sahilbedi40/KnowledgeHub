@@ -31,6 +31,7 @@ messageText:string="";
       {
         this.loaderService.showLoader();
         this.Answerobj.divId =this.maxRecordsInType+1;
+        this.Answerobj.divContent = (this.Answerobj.divContent !="" && this.Answerobj.divContent != null) ? this.Answerobj.divContent : ""; 
         this._service.SaveQuestionToDB(this.Answerobj,this.selectedType).then(
           (resolve) =>{            
             this.messageText = "Record added successfully";
