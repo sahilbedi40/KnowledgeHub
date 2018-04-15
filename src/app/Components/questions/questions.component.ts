@@ -52,14 +52,7 @@ export class QuestionsComponent implements OnInit {
 }
  
 CheckUserAdminAccess(){
- this.userAccessService.CheckUserAdminAccess().subscribe(
-   (resolve) =>{
-     this.isAdminAccess = Boolean(resolve[0]);     
-   },
-   (reject) =>{
-    console.log(reject);
-   }
- )
+     this.isAdminAccess = sessionStorage.getItem("UserData") !=null ?  Boolean(atob(sessionStorage.getItem("UserData"))) : false;
 }
 
   GetQuestionsByCategoryType(type:string){

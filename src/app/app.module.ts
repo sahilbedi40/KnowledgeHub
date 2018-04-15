@@ -21,6 +21,7 @@ import { LoaderComponent } from './Components/loader/loader.component';
 import {LoaderService} from './Services/loader.service';
 import { AboutMeComponent } from './Components/about-me/about-me.component';
 import {UserAccessService} from './Services/user-access.service';
+import { AdminLoginComponent } from './Components/admin-login/admin-login.component';
 
 const appRoutes: Routes = [  
   { path: '',redirectTo: '/Dashboard',pathMatch: 'full'},
@@ -28,7 +29,8 @@ const appRoutes: Routes = [
   {path:'dashboard', component: DashboardComponent},
   {path:'questions',component:QuestionsComponent},
   {path:'addquestion',component:AddQuestionPopupComponent},
-  {path:'aboutus',component:AboutMeComponent}
+  {path:'aboutus',component:AboutMeComponent},
+  {path:'admin/login',component:AdminLoginComponent}
 ];
 
 @NgModule({
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
     AddQuestionPopupComponent,
     QuestionsComponent,
     LoaderComponent,
-    AboutMeComponent
+    AboutMeComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,
