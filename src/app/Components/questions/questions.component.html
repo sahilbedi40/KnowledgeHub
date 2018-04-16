@@ -1,17 +1,26 @@
 
-<div class="container MarginTop80 MarginBottom30">
+<div class="container MyClsQue MarginTop80 MarginBottom30">
     <div  class="row MarginBottom0">
-        <div class="col-md-6"><h4 class="my-4">{{title + ' Interview Questions'}}</h4></div>
-        <div class="col-md-6"><button  class="btn btn-success float-right" (click)="AddQuestion()">Add Question</button></div>
+        <div class="col-md-6 Mycol1"><h4 class="my-4">{{title + ' Interview Questions'}}</h4></div>
+        <div class="col-md-6 Mycol2"><button  class="btn btn-success float-right" (click)="AddQuestion()">Add Question</button></div>
     </div>
     <div *ngIf="NoRecordExist" class="alert alert-info">
        No record exist against {{title}} category.
     </div>
+    <div class="row" *ngIf="!NoRecordExist" style="margin-bottom:4px;">
+    <div class="col-md-12">
+        <i class="fa fa-filter fa-2x float-right" title="Search" style="cursor:pointer;margin-bottom:4px;" (click)="ShowHideSearchBar()" aria-hidden="true"></i>
+        <div class="form-group">
+            <input type="text" *ngIf="issearchBarShow" class="form-control" placeholder="Search" [(ngModel)]="searchText" />
+        </div>
+    </div>
+
+    </div>
   <div id="accordion">
-    <div class="card" *ngFor="let item of questionList">
+    <div class="card" *ngFor="let item of questionList | filterList : searchText">
       <div class="card-header" [attr.id]="'heading'+item.divId">
         <h5 class="mb-0">
-          <button class="btn btn-link" data-toggle="collapse" [attr.data-target]="'#collapse' +item.divId" aria-expanded="true" [attr.aria-controls]="'collapse'+item.divId">
+          <button class="btn  wrapText btn-link" data-toggle="collapse" [attr.data-target]="'#collapse' +item.divId" aria-expanded="true" [attr.aria-controls]="'collapse'+item.divId">
             {{item.title}}
           </button>
 

@@ -25,6 +25,8 @@
 margin-top: 50px;
 }
 
+
+
 /* Portrait and Landscape */
 @media only screen 
 and (min-device-width: 320px) 
@@ -51,6 +53,10 @@ and (-webkit-min-device-pixel-ratio: 2) {
     #AboutDivId{
         margin-top: 34px;
         }
+
+    .btn.wrapText{
+        white-space: normal !important;
+    }
 }
 
 /* Portrait */
@@ -65,6 +71,16 @@ and (-webkit-min-device-pixel-ratio: 2)
 
     .MarginBottom0 h1{     
         margin-left: 14px;
+    }
+
+    .MyClsQue .row .Mycol1{
+        flex: 0 0 66.666667% !important;
+        max-width: 66.666667% !important;
+    }
+
+    .MyClsQue .row .Mycol2{
+        flex: 0 0 33.333333% !important;
+        max-width: 33.333333% !important;
     }
 }
 

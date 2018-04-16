@@ -26,6 +26,9 @@ export class QuestionsComponent implements OnInit {
       key:""
   };
 
+  searchText:string="";
+  issearchBarShow:boolean=false;
+
   selectedCatType:string="";
   //@ViewChild(AddQuestionPopupComponent) private Mypopup:AddQuestionPopupComponent;
   constructor(private _service:ManageQuestionService,private activatedRoute: ActivatedRoute,private route:Router,private _loaderService:LoaderService,private userAccessService:UserAccessService) { }
@@ -63,7 +66,7 @@ CheckUserAdminAccess(){
        // this.questionList = data
 
 if(data.length === 2){       
-        result=[];
+        result=[];        
         if($.isArray(data[0]))
         {
           result = data[0];
@@ -140,4 +143,7 @@ else{
     this.selectedItemObject.key="";
   }
 
+  ShowHideSearchBar(){
+    this.issearchBarShow = !this.issearchBarShow;
+  }    
 }
