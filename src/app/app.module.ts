@@ -23,6 +23,7 @@ import { AboutMeComponent } from './Components/about-me/about-me.component';
 import {UserAccessService} from './Services/user-access.service';
 import { AdminLoginComponent } from './Components/admin-login/admin-login.component';
 import { FilterListPipe } from './Pipes/filter-list.pipe';
+import { SafeHtmlPipe } from './Pipes/safe-html.pipe';
 
 const appRoutes: Routes = [  
   { path: '',redirectTo: '/Dashboard',pathMatch: 'full'},
@@ -43,7 +44,8 @@ const appRoutes: Routes = [
     LoaderComponent,
     AboutMeComponent,
     AdminLoginComponent,
-    FilterListPipe
+    FilterListPipe,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,
