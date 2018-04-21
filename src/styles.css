@@ -25,6 +25,25 @@
 margin-top: 50px;
 }
 
+.card-body div,.card-body div p{
+    text-align: justify;
+}
+
+/* .card-header .btn-link,.card-header .btn-link:hover{
+    color: #001f3f;
+} */
+
+.card-header .btn-link
+{
+    font-weight: 500;
+    color: black;
+    background-color: transparent;
+}
+
+.card-header .btn-link:hover, .card-header .btn-link:focus{
+    text-decoration: none !important;
+    color: black;
+}
 
 
 /* Portrait and Landscape */
@@ -56,6 +75,16 @@ and (-webkit-min-device-pixel-ratio: 2) {
 
     .btn.wrapText{
         white-space: normal !important;
+        font-size: 12px;
+        text-align: left;
+    }
+
+    .card-body div,.card-body div p,.card-body div p ul li,.card-body div ul li,.card-body span{
+        font-size: 13px;
+    }
+
+    .MyClsQue .alert.alert-info{
+        font-size: 13px;
     }
 }
 
