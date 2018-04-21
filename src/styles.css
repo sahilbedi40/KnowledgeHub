@@ -52,6 +52,13 @@ margin-top: 50px;
     border-left: 5px solid yellow;
 }
 
+.publishHolder{
+    margin-left: 3px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
 
 /* Portrait and Landscape */
 @media only screen 
@@ -92,6 +99,10 @@ and (-webkit-min-device-pixel-ratio: 2) {
 
     .MyClsQue .alert.alert-info{
         font-size: 13px;
+    }
+
+    .publishHolder{        
+        font-size: 12px;        
     }
 }
 
