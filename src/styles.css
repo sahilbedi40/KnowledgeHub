@@ -45,6 +45,13 @@ margin-top: 50px;
     color: black;
 }
 
+.borderLeftGreen{
+    border-left: 5px solid green;
+}
+.borderLeftYellow{
+    border-left: 5px solid yellow;
+}
+
 
 /* Portrait and Landscape */
 @media only screen 
