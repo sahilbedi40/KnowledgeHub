@@ -58,7 +58,14 @@ margin-top: 50px;
     font-weight: 500;
 }
 
+.maxWidth100, .maxWidth100 img{
 
+    max-width: 100%;
+}
+
+.MyClsQue .card-header{
+    background-color: rgba(0,0,0,0) !important;
+}
 
 /* Portrait and Landscape */
 @media only screen 
