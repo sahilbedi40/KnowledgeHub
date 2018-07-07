@@ -9,7 +9,9 @@ import {UserAccessService} from './Services/user-access.service';
 })
 export class AppComponent implements OnInit {
   isProfileMenuShow = false;
-constructor(private route:Router, private userAccessService:UserAccessService){}
+constructor(private route:Router, private userAccessService:UserAccessService){
+  this.isProfileMenuShow = localStorage.getItem("UserData") !=null ?  Boolean(atob(sessionStorage.getItem("UserData"))) : false;
+}
 
 ngOnInit() {
   this.userAccessService.isProfileMenuShow.subscribe(
@@ -20,7 +22,7 @@ ngOnInit() {
 }
 
   SignOut(){
-    sessionStorage.removeItem("UserData");
+    localStorage.removeItem("UserData");
     this.userAccessService.hideProfileMenu();
     this.route.navigate(["./dashboard"]);
 

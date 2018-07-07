@@ -32,7 +32,7 @@ messageText:string="";
       (resolve) =>{        
         if(this.userModel.email === resolve[0].toString() && this.userModel.password === resolve[2].toString())
           {
-              sessionStorage.setItem("UserData",btoa("true"));
+              localStorage.setItem("UserData",btoa("true"));
               this._loaderService.hideLoader();
               this._userAccessService.showProfileMenu();
               this.route.navigate(["./dashboard"]);

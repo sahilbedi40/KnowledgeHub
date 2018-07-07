@@ -55,7 +55,7 @@ export class QuestionsComponent implements OnInit {
 }
  
 CheckUserAdminAccess(){
-     this.isAdminAccess = sessionStorage.getItem("UserData") !=null ?  Boolean(atob(sessionStorage.getItem("UserData"))) : false;
+     this.isAdminAccess = localStorage.getItem("UserData") !=null ?  Boolean(atob(sessionStorage.getItem("UserData"))) : false;
 }
 
   GetQuestionsByCategoryType(type:string){
