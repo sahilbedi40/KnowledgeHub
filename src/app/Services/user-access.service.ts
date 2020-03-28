@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import "rxjs/Rx";
-import { Subject } from 'rxjs/Rx';
-import { AngularFireDatabase } from 'angularfire2/database';
+import "rxjs";
+import { Subject } from 'rxjs';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Injectable()
 export class UserAccessService {

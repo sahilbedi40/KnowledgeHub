@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import "rxjs/Rx";
-import { AngularFireDatabase } from 'angularfire2/database';
+import "rxjs";
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Injectable()
 export class ManageQuestionService {

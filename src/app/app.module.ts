@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import {AngularFireModule} from 'angularfire2';
+//import { AngularFirestoreModule } from 'angularfire2/firestore';
+//import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import { FormsModule }   from '@angular/forms';
 // import {FirebaseApp} from '@firebase/app-types';
@@ -52,7 +52,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
+    //AngularFireAuthModule,
     AngularFireDatabaseModule,
     FormsModule
   ],
