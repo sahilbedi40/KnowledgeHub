@@ -1,0 +1,57 @@
+<div class="container MarginTop80 MarginBottom30">
+    <div  class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-6"><h4 class="my-4">Add Category</h4></div>        
+    </div>
+
+
+  <div class="row">
+    <div class="col-md-2"></div>
+
+    <div class="col-md-8">
+
+        <div *ngIf="!isHidden"  [ngClass]="isSuccess? 'alert alert-success text-center': 'alert alert-danger text-center'">
+            {{messageText}}
+          </div>
+
+        <form #MyForm="ngForm">
+            <div class="form-group">
+              <label>Title</label>
+              <input type="text" id="title" class="form-control" name="title" [(ngModel)]="CategoryType.title" #title="ngModel" required  placeholder="C#.Net">
+
+              <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
+                  Title is required.
+              </div> 
+
+            </div>
+            <div class="form-group">
+                <label>Route Value</label>
+                <input type="text" id="routeValue" class="form-control" name="routeValue" [(ngModel)]="CategoryType.routeValue" #routeValue="ngModel" required  placeholder="CSharp">
+  
+                <div *ngIf="routeValue.invalid && (routeValue.dirty || routeValue.touched)" class="alert alert-danger">
+                    Route value is required.
+                </div> 
+            </div>
+            <div class="form-group">
+                <label>Image Url</label>
+                <input type="text" id="imgSrc" class="form-control" name="imgSrc" [(ngModel)]="CategoryType.imgSrc" #imgSrc="ngModel" required  placeholder="www.test.com/images/test.png">
+  
+                <div *ngIf="imgSrc.invalid && (imgSrc.dirty || imgSrc.touched)" class="alert alert-danger">
+                    Image url is required.
+                </div> 
+            </div>
+              
+            <div class="form-group">
+              <label>Description</label>
+              <textarea class="form-control" id="description" placeholder="Description"  name="description" [(ngModel)]="CategoryType.description" #description="ngModel" rows="3"></textarea>
+              <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-danger">
+                Description is required.
+            </div>
+            </div>
+            <button [disabled]="MyForm.invalid"  class="btn btn-success float-right">Save</button>
+          </form>
+    </div>
+  <div class="col-md-2"></div>
+  </div>
+</div>
+

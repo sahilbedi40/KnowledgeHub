@@ -6,12 +6,13 @@
 export const environment = {
   production: false,
   firebase:{
-    apiKey: "AIzaSyChB5iyFiACj98hDaisyTfZNuM5GqshNLg",
-    authDomain: "knowledgehub-2e4b2.firebaseapp.com",
-    databaseURL: "https://knowledgehub-2e4b2.firebaseio.com",
-    projectId: "knowledgehub-2e4b2",
-    storageBucket: "knowledgehub-2e4b2.appspot.com",
-    messagingSenderId: "746785608537"
+    apiKey: "AIzaSyAwo4F3ge6KzYL4hnkJFJefaPc4HiHdNco",
+    authDomain: "knowledgehubdev.firebaseapp.com",
+    databaseURL: "https://knowledgehubdev.firebaseio.com",
+    projectId: "knowledgehubdev",
+    storageBucket: "knowledgehubdev.appspot.com",
+    messagingSenderId: "158239362379",
+    appId: "1:158239362379:web:1b3ca2a06bbbb67763acce"
   }
 };
 
