@@ -31,7 +31,9 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item"[routerLink]='["/questions"]' [queryParams]="{type: 'MSSql'}">Sql Server</a>                              
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item"[routerLink]='["/questions"]' [queryParams]="{type: 'Angular'}">Angular</a>                              
+                <a class="dropdown-item"[routerLink]='["/questions"]' [queryParams]="{type: 'Angular'}">Angular</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item"[routerLink]='["/questions"]' [queryParams]="{type: 'DotNetCore'}">.Net Core</a>                              
               </div>
         </li>
         <li class="nav-item">
@@ -43,7 +45,9 @@
               User Profile
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a style="cursor: pointer;" class="dropdown-item" (click)="SignOut()">Sign Out</a>              
+              <a class="dropdown-item"[routerLink]='["/admin/addcategory"]'>Add Category</a>
+              <div class="dropdown-divider"></div>  
+              <a style="cursor: pointer;" class="dropdown-item" (click)="SignOut()">Sign Out</a>         
             </div>
       </li>
 

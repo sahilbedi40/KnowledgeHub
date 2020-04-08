@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-//import {Observable} from  'rxjs/Rx';
 import "rxjs";
-//import {HttpClient} from '@angular/common/http';
 import { AngularFireDatabase } from '@angular/fire/database';
 
 @Injectable()
@@ -13,6 +11,10 @@ export class CategoryTypeService {
 
  public  GetCategoryType(){
   return this.db.list("/CategoryType").valueChanges();
+  }
+
+  public AddCategoryType(categoryType:any){
+    return this.db.list("/CategoryType").push(categoryType);
   }
 
 }
